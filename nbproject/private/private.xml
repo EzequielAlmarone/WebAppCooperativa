@@ -2,6 +2,14 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/home/ezequiel/NetBeansProjects/WebAppCooperativa/src/java/br/com/cooperativa/model/Funcionario.java</file>
+            <file>file:/home/ezequiel/NetBeansProjects/WebAppCooperativa/src/java/META-INF/sql/popular-tabela.sql</file>
+            <file>file:/home/ezequiel/NetBeansProjects/WebAppCooperativa/src/java/META-INF/persistence.xml</file>
+            <file>file:/home/ezequiel/NetBeansProjects/WebAppCooperativa/src/java/br/com/cooperativa/dao/FuncionarioDao.java</file>
+            <file>file:/home/ezequiel/NetBeansProjects/WebAppCooperativa/src/java/conexao/TestaConexao.java</file>
+            <file>file:/home/ezequiel/NetBeansProjects/WebAppCooperativa/src/java/conexao/Conexao.java</file>
+            <file>file:/home/ezequiel/NetBeansProjects/WebAppCooperativa/src/java/br/com/cooperativa/util/JPAUtil.java</file>
+        </group>
     </open-files>
 </project-private>

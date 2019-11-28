@@ -4,9 +4,9 @@ package conexao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+
+
 
 public class Conexao {
     private Connection conexao = null;
@@ -27,4 +27,6 @@ public class Conexao {
         return getConnection().prepareStatement(sql);
     }
 }
+
+
 
