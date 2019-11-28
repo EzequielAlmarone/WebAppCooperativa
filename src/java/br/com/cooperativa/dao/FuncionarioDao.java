@@ -1,6 +1,7 @@
 package br.com.cooperativa.dao;
 
 import br.com.cooperativa.model.Funcionario;
+import br.com.cooperativa.util.JPAUtil;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
@@ -25,10 +26,13 @@ public class FuncionarioDao {
     }
 
     public List<Funcionario> pesquisar(String nome) {
+        EntityManager em = new JPAUtil().getEntityManager();
         String sql = "from Funcionario where nome like :nome";
         TypedQuery<Funcionario> query = em.createQuery(sql, Funcionario.class);
         query.setParameter("nome", nome + "%");
-        return query.getResultList();
+        List<Funcionario> lista = query.getResultList();
+        em.close();
+        return lista;
     }
 
     public Funcionario salvar(Funcionario f) {

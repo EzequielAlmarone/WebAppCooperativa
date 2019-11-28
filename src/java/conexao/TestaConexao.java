@@ -1,7 +1,9 @@
 
 package conexao;
 
+import br.com.cooperativa.dao.FuncionarioDao;
 import br.com.cooperativa.model.Funcionario;
+import br.com.cooperativa.util.JPAUtil;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -16,25 +18,33 @@ import javax.persistence.Persistence;
 public class TestaConexao {
     public static void main(String[] args) throws SQLException {
         
-        Funcionario f = new Funcionario();
-        f.setNome("Marcos Rogerio Ferreira");
-        
-        EntityManagerFactory emf = 
-                Persistence.createEntityManagerFactory("cooperativa");
-        EntityManager em = emf.createEntityManager();
-        List<Funcionario> lista = em.createQuery("from Funcionario", Funcionario.class).getResultList();
-        
-        for(Funcionario funcionario : lista){
-            System.out.println("Funcionario.:"+funcionario.getNome());
-        }
+//        EntityManager em = new JPAUtil().getEntityManager();
 //        em.getTransaction().begin();
-//        
-//        em.persist(f);
-//        
-//        em.getTransaction().commit();
-        em.close();
-        emf.close();
+        FuncionarioDao fDao = new FuncionarioDao();
+        List<Funcionario> lista = fDao.pesquisar("");
+        System.out.println(lista);
+      
         
+        
+//        Funcionario f = new Funcionario();
+//        f.setNome("Marcos Rogerio Ferreira");
+//        
+//        EntityManagerFactory emf = 
+//                Persistence.createEntityManagerFactory("cooperativa");
+//        EntityManager em = emf.createEntityManager();
+//        List<Funcionario> lista = em.createQuery("from Funcionario", Funcionario.class).getResultList();
+//        
+//        for(Funcionario funcionario : lista){
+//            System.out.println("Funcionario.:"+funcionario.getNome());
+//        }
+////        em.getTransaction().begin();
+////        
+////        em.persist(f);
+////        
+////        em.getTransaction().commit();
+//        em.close();
+//        emf.close();
+//        
         
 //        Connection conexao = Conexao.getConnection();        
 //        PreparedStatement stmt;
