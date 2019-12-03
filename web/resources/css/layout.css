@@ -12,6 +12,14 @@
 #D0D991 - VERDE CLARO
 
 */
+@charset "UTF-8";
+
+body{
+    margin: 0;
+    font-size: 13px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+}
 .cabecalho {
     position: fixed;
     top: 0;
@@ -52,12 +60,12 @@
 .barra-esquerda.aberto{
     margin-left: 0;
 }
-@media (max-width: 960px) {
+@media (min-width: 960px) {
     .barra-esquerda{
         margin-left: 0;
     }
     .barra-esquerda.aberto{
-        margin-left: 0;
+        margin-left: -211px;
     }
 }
 
@@ -71,12 +79,12 @@
 .conteudo.aberto {
     margin-left: 211px; 
 }
-@media (max-width: 960px){
+@media (min-width: 960px){
     .conteudo {      
-        margin-left: 211px;
+        margin-left: 210px;
     }
     .conteudo.aberto {
-        margin-left: 211px; 
+        margin-left: 10px; 
     }
 }
 /*-- btn-menu--*/
@@ -86,3 +94,31 @@
     margin-right: 15px;
     color: #4D5932;
 }
+/*-- MENU --*/
+.barra-menu {
+    font-size: 1.1em;
+    margin-top: 80px;
+}
+.barra-menu > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.barra-menu > ul a {
+    display: block;
+    padding: 10px 15px;
+    border-left: 3px solid #D0E9F2;
+    text-decoration: none;
+    font-weight: 500;
+    color: #4D5932;
+}
+.barra-menu > ul i {
+    margin-right: 6px;
+}
+.barra-menu > ul a:hover, .barra-menu > ul a:focus {
+    border-left: 3px solid #4D5932;
+    color: #4D5932;
+    background-color: #ADCCD9;   
+}
+
+    

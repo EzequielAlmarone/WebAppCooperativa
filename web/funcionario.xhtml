@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
-    <h:head>
-        <title>Cadastro de Funcionarios</title>
-    </h:head>
-    <h:body>
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      template="WEB-INF/template/principal.xhtml">
+    <ui:define name="conteudo">
         <h:form id="frm">
             <p:toolbar>
                 <f:facet name="left">
@@ -49,7 +48,8 @@
                     <h:outputText value="#{funcionario.telefone}" />
                 </p:column>
             </p:dataTable>
-        </h:form>
-    </h:body>
-</html>
+        </h:form>       
+    </ui:define>
+  
+</ui:composition>
 
