@@ -1,0 +1,88 @@
+
+/* 
+    Created on : 02/12/2019, 20:05:05
+    Author     : ezequiel
+*/
+/*-- CABECALHO --*/
+/*
+#ADCCD9 - AZUL
+#D0E9F2 - AZUL CLARO
+#4D5932 - vERDE ESCURO
+#B2BF84 - VERDE 
+#D0D991 - VERDE CLARO
+
+*/
+.cabecalho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+    min-height: 50px;
+    background-color: #D0E9F2;
+}
+.cabcalho > img {
+    margin-top: 10px;
+    margin-left: 5px;
+}
+.cabecalho > label {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 5px; 
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #4D5932;   
+}
+
+/*-- BARRA MENU --*/
+.barra-esquerda {
+    position: fixed;
+    width: 210px;
+    margin-left: -211px;
+    top: 0px;
+    left: 0;
+    bottom: 0;
+    z-index: 99998;
+    transition: margin-left 0.5s;
+    overflow: auto;
+    background-color: #D0E9F2;
+    border-right: 1px solid #4D5932;
+}
+.barra-esquerda.aberto{
+    margin-left: 0;
+}
+@media (max-width: 960px) {
+    .barra-esquerda{
+        margin-left: 0;
+    }
+    .barra-esquerda.aberto{
+        margin-left: 0;
+    }
+}
+
+/*--Area de Conteudo--*/
+.conteudo {
+    margin-top: 50px;
+    padding: 10px 10px;
+    margin-left: 0;
+    transition: margin-left 0.5s;  
+}
+.conteudo.aberto {
+    margin-left: 211px; 
+}
+@media (max-width: 960px){
+    .conteudo {      
+        margin-left: 211px;
+    }
+    .conteudo.aberto {
+        margin-left: 211px; 
+    }
+}
+/*-- btn-menu--*/
+.btn-menu {
+    float: right;
+    line-height: 50px;
+    margin-right: 15px;
+    color: #4D5932;
+}

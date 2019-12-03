@@ -7,30 +7,49 @@
         <title>Cadastro de Funcionarios</title>
     </h:head>
     <h:body>
-        <p:dataTable value="#{funcionarioBean.funcionarios}"
-                     var="funcionario"
-                     emptyMessage="Nenhum funcionario cadastrado"
-                     rows="15" paginator="true" 
-                     paginatorPosition="bottom">
-            <p:column headerText="Nome">
-                <h:outputText value="#{funcionario.nome}" />
-            </p:column>
-            <p:column headerText="RG">
-                <h:outputText value="#{funcionario.RG}" />
-            </p:column>
-            <p:column headerText="CPF">
-                <h:outputText value="#{funcionario.CPF}" />
-            </p:column>
-            <p:column headerText="Bairro">
-                <h:outputText value="#{funcionario.bairro}" />
-            </p:column>
-            <p:column headerText="Logradouro">
-                <h:outputText value="#{funcionario.logradouro}" />
-            </p:column>
-            <p:column headerText="Telefone">
-                <h:outputText value="#{funcionario.telefone}" />
-            </p:column>
-        </p:dataTable>
+        <h:form id="frm">
+            <p:toolbar>
+                <f:facet name="left">
+                    <p:commandButton value="Novo" icon="ui-icon-document" title="Novo"/>
+                        <span class="ui-separator">
+                            <span class="ui-icon ui-icon-grip-dotted-vertical"/>
+                        </span>
+                            <p:commandButton icon="ui-icon-pencil" title="Editar"/>
+                            <p:commandButton icon="ui-icon-trash" title="Excluir"/>
+                </f:facet>
+                <f:facet name="right">
+                    <p:commandButton icon="fa fa-file-excel-o" title="Gerar Planilha"/>
+                    <p:commandButton icon="fa fa-buysellads" title="Gerar Relatório em pdf"/>
+                          
+                </f:facet>
+
+            </p:toolbar>
+            <p:dataTable style="margin-top: 20 px"
+                         value="#{funcionarioBean.funcionarios}"
+                         var="funcionario"
+                         emptyMessage="Nenhum funcionario cadastrado"
+                         rows="15" paginator="true" 
+                         paginatorPosition="bottom">
+                <p:column headerText="Nome">
+                    <h:outputText value="#{funcionario.nome}" />
+                </p:column>
+                <p:column headerText="RG">
+                    <h:outputText value="#{funcionario.RG}" />
+                </p:column>
+                <p:column headerText="CPF">
+                    <h:outputText value="#{funcionario.CPF}" />
+                </p:column>
+                <p:column headerText="Bairro">
+                    <h:outputText value="#{funcionario.bairro}" />
+                </p:column>
+                <p:column headerText="Logradouro">
+                    <h:outputText value="#{funcionario.logradouro}" />
+                </p:column>
+                <p:column headerText="Telefone">
+                    <h:outputText value="#{funcionario.telefone}" />
+                </p:column>
+            </p:dataTable>
+        </h:form>
     </h:body>
 </html>
 

@@ -1,6 +1,5 @@
 
 package br.com.cooperativa.bean;
-
 import br.com.cooperativa.dao.FuncionarioDao;
 import br.com.cooperativa.model.Funcionario;
 import java.io.Serializable;
