@@ -7,13 +7,13 @@
     <h:head>
         <f:facet name="first">
             <meta charset="UTF-8" />
-            <meta name="viewport" 
-                  content="width=device-width, initial-scale=1" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
         </f:facet>
         <title>Recicleiros - Cooperativa</title>
         <h:outputStylesheet library="css" name="layout.css"/>
     </h:head>
     <h:body>
+        <h:form>
         <header class="cabecalho">
 
             <h:graphicImage library="image" name="logo.png"/>
@@ -46,9 +46,9 @@
                         </h:link>
                     </li>
                     <li>
-                        <h:link>
+                        <h:commandLink action="funcionario?faces-redirect=true">
                             <i class="fa fa-fw fa-user"></i>Cooperados
-                        </h:link>
+                        </h:commandLink>
                     </li>
                     <li>
                         <h:link>
@@ -67,12 +67,15 @@
 
 
         </aside>
+        
+        </h:form>
+        
         <!-- Conteudo-->
         <section class="conteudo js-conteudo">
+            <br />
             <ui:insert name="conteudo"/>
         </section>
-
-
+       
         <!--Ultimos (Scripts)-->
         <h:outputScript target="body" library="primefaces" name="jquery/jquery.js"/>
         <h:outputScript target="body" library="js" name="layout.js"/>     

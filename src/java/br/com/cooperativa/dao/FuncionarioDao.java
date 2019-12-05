@@ -35,8 +35,12 @@ public class FuncionarioDao {
         return lista;
     }
 
-    public Funcionario salvar(Funcionario f) {
-        return em.merge(f);
+    public void salvar(Funcionario f) {
+        EntityManager em = new JPAUtil().getEntityManager();
+        em.getTransaction().begin();
+        em.merge(f);
+        em.getTransaction().commit();
+        em.close();
     }
 
     public void excluir(Funcionario f) {

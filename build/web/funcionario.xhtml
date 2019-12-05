@@ -5,11 +5,12 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       template="WEB-INF/template/principal.xhtml">
+    
     <ui:define name="conteudo">
         <h:form id="frm">
             <p:toolbar>
                 <f:facet name="left">
-                    <p:commandButton value="Novo" icon="ui-icon-document" title="Novo"/>
+                    <p:commandButton value="Novo" icon="ui-icon-document" action="#{funcionarioBean.prepararSalvar()}" process="@this" update="funcionario-dialog" oncomplete="PF('edicaoFuncinarioDialog').show()" />
                         <span class="ui-separator">
                             <span class="ui-icon ui-icon-grip-dotted-vertical"/>
                         </span>
@@ -48,6 +49,38 @@
                     <h:outputText value="#{funcionario.telefone}" />
                 </p:column>
             </p:dataTable>
+            
+            <!-- Cadastro de Funcionarios-->
+            
+            <p:dialog header="Manutenção de Funcionários" widgetVar="edicaoFuncinarioDialog" id="funcionario-dialog" resizable="false" closeOnEscape="true" modal="true">
+                <h:panelGrid columns="2" id="painel-dialog">
+                    <p:outputLabel value="ID" for="id"/>
+                    <p:inputText id="id" size="10" maxlength="20"/>
+                    <p:outputLabel value="Nome" for="nome"/>
+                    <p:inputText id="nome" size="55" maxlength="120"/>
+                    <p:outputLabel value="RG" for="rg" />
+                    <p:inputMask id="rg" mask="9.999.999-9"/>
+                    <p:outputLabel value="CPF" for="cpf"/>
+                    <p:inputMask id="cpf" mask="999.999.999-99"/>
+                    <p:outputLabel value="Telefone" for="telefone"/>
+                    <p:inputMask id="telefone" mask="(99) 99999-9999"/>
+                    <p:outputLabel value="Logradouro" for="logradouro"/>
+                    <p:inputText id="logradouro" size="55" maxlength="120"/>
+                    <p:outputLabel value="Número" for="numero"/>
+                    <p:inputText id="numero" size="10" maxlength="10"/>
+                    <p:outputLabel value="Bairro" for="bairro"/>
+                    <p:inputText id="bairro" size="30" maxlength="85"/>
+                    <p:outputLabel value="CEP" for="cep"/>
+                    <p:inputMask id="cep" mask="99999-999"/>
+                    <p:outputLabel value="Cidade" for="cidade"/>
+                    <p:inputText id="cidade" size="55" maxlength="120"/> 
+                    <p:commandButton value="Salvar" id="salvar-button"/>
+                    
+                </h:panelGrid>
+                
+                
+            </p:dialog>
+            
         </h:form>       
     </ui:define>
   
