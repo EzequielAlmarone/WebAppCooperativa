@@ -8,6 +8,7 @@
     
     <ui:define name="conteudo">
         <h:form id="frm">
+            <p:messages autoUpdate="true"/>
             <p:toolbar>
                 <f:facet name="left">
                     <p:commandButton value="Novo" icon="ui-icon-document" action="#{funcionarioBean.prepararSalvar()}" process="@this" update="funcionario-dialog" oncomplete="PF('edicaoFuncinarioDialog').show()" />
@@ -24,7 +25,7 @@
                 </f:facet>
 
             </p:toolbar>
-            <p:dataTable style="margin-top: 20 px"
+            <p:dataTable style="margin-top: 20 px" id="funcionario-tabela"
                          value="#{funcionarioBean.funcionarios}"
                          var="funcionario"
                          emptyMessage="Nenhum funcionario cadastrado"
@@ -55,26 +56,27 @@
             <p:dialog header="Manutenção de Funcionários" widgetVar="edicaoFuncinarioDialog" id="funcionario-dialog" resizable="false" closeOnEscape="true" modal="true">
                 <h:panelGrid columns="2" id="painel-dialog">
                     <p:outputLabel value="ID" for="id"/>
-                    <p:inputText id="id" size="10" maxlength="20"/>
+                    <p:inputText id="id" size="10" maxlength="20" value="#{funcionarioBean.funcionario.id}"/>
                     <p:outputLabel value="Nome" for="nome"/>
-                    <p:inputText id="nome" size="55" maxlength="120"/>
+                    <p:inputText id="nome" size="55" maxlength="120" value="#{funcionarioBean.funcionario.nome}"/>
                     <p:outputLabel value="RG" for="rg" />
-                    <p:inputMask id="rg" mask="9.999.999-9"/>
+                    <p:inputMask id="rg" mask="9.999.999-9" value="#{funcionarioBean.funcionario.RG}"/>
                     <p:outputLabel value="CPF" for="cpf"/>
-                    <p:inputMask id="cpf" mask="999.999.999-99"/>
+                    <p:inputMask id="cpf" mask="999.999.999-99" value="#{funcionarioBean.funcionario.CPF}"/>
                     <p:outputLabel value="Telefone" for="telefone"/>
-                    <p:inputMask id="telefone" mask="(99) 99999-9999"/>
+                    <p:inputMask id="telefone" mask="(99) 99999-9999" value="#{funcionarioBean.funcionario.telefone}"/>
                     <p:outputLabel value="Logradouro" for="logradouro"/>
-                    <p:inputText id="logradouro" size="55" maxlength="120"/>
+                    <p:inputText id="logradouro" size="55" maxlength="120" value="#{funcionarioBean.funcionario.logradouro}"/>
                     <p:outputLabel value="Número" for="numero"/>
-                    <p:inputText id="numero" size="10" maxlength="10"/>
+                    <p:inputText id="numero" size="10" maxlength="10" value="#{funcionarioBean.funcionario.numero}"/>
                     <p:outputLabel value="Bairro" for="bairro"/>
-                    <p:inputText id="bairro" size="30" maxlength="85"/>
+                    <p:inputText id="bairro" size="30" maxlength="85" value="#{funcionarioBean.funcionario.bairro}"/>
                     <p:outputLabel value="CEP" for="cep"/>
-                    <p:inputMask id="cep" mask="99999-999"/>
+                    <p:inputMask id="cep" mask="99999-999" value="#{funcionarioBean.funcionario.CEP}"/>
                     <p:outputLabel value="Cidade" for="cidade"/>
-                    <p:inputText id="cidade" size="55" maxlength="120"/> 
-                    <p:commandButton value="Salvar" id="salvar-button"/>
+                    <p:inputText id="cidade" size="55" maxlength="120" value="#{funcionarioBean.funcionario.cidade}"/> 
+                    
+                    <p:commandButton value="Salvar" id="salvar-button" action="#{funcionarioBean.salvar()}" process="funcionario-dialog" update="funcionario-tabela" oncomplete="PF('edicaoFuncinarioDialog').hide()" />
                     
                 </h:panelGrid>
                 

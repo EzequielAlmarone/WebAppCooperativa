@@ -32,4 +32,9 @@ public class FuncionarioBean implements Serializable{
         return funcionarioDao.pesquisar("");
         
     }
+
+    public Funcionario getFuncionario() {
+        return funcionario;
+    }
+    
 }
